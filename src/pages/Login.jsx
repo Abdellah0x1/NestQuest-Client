@@ -1,12 +1,27 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion";
 import { useState } from "react";
+import {login} from "../api/authApi"
+import { ToastContainer, toast } from 'react-toastify';
+
+
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
-    function onSubmit(e){
+    async function onSubmit(e){
         e.preventDefault();
+        try {
+            await login({email,password})
+            setEmail("");
+            setPassword("");
+            toast("Log in successful");
+            navigate('/')
+        }catch(err){
+            console.log(err)
+            toast("Incorrect Email or Password hh");
+        }
     }
 
     return (
@@ -14,6 +29,7 @@ function Login() {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
+        <ToastContainer position="top-center" draggable theme="dark"/>
         <div className="h-screen flex items-center justify-center">
             <form onSubmit={onSubmit} className="border border-r-4 border-b-4 px-6 py-8  w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>

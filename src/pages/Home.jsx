@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 
+
+
 function Home() {
+    
     return (
         <motion.main 
         initial={{ opacity: 0, y: 14 }}
