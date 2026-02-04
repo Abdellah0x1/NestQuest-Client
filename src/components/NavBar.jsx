@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import Logo from "../assets/logo.png"
 function Navbar(){
   return <div className="fixed top-0 left-0 right-0 px-20 py-4 flex items-center justify-between border border-b-gray-300">
-    <NavLink to="/"><img src={Logo} className="w-10"/></NavLink>
+    <NavLink to="/"><img src={Logo} className="w-20"/></NavLink>
     <ul className="flex gap-5 ">
       <li><NavLink to="/"  className="p-2 rounded-sm  transition-all delay-75">Home</NavLink></li>
       <li><NavLink to="/browse" className="p-2 rounded-sm hover:bg-gray-50 transition-all delay-75">Properties</NavLink></li>

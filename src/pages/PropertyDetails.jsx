@@ -32,7 +32,7 @@ function PropertyDetails() {
             <div className="flex items-center justify-center min-h-screen"> 
             <div className="h-20 w-20 animate-spin rounded-full border-2 border-gray-300 border-t-black" />
         </div>
-            : <div className="p-20 ">
+            : <div className="px-20 py-30 ">
             <button className="flex items-center gap-2 p-2 border cursor-pointer" onClick={()=> navigate(-1)}><FaArrowLeft/> Back</button>
             <div className="flex flex-col md:flex-row items-center gap-10">
                 <div>
