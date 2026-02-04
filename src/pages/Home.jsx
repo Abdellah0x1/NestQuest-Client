@@ -5,6 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
+import Testimonials from "../components/Testimonials";
 
 
 
@@ -57,7 +58,9 @@ function Home() {
                 </div>
             </div>
             {/* footer wa9ila hh */}
+            <Testimonials/>
             <Footer/>
+
         </div>
         </motion.main>
     )
