@@ -25,8 +25,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
         <ToastContainer position="top-center" draggable theme="dark"/>
-        <div className="w-full h-screen  flex flex-col items-center justify-center">
-        <button onClick={()=> navigate(-1)} className="mb-4 flex gap-2 justify-center items-center p-2 border border-r-2 border-b-2 transition-all delay-150 cursor-pointer hover:border-1">
+        <div className="w-full h-screen  flex flex-col items-center pt-10">
+        <button onClick={()=> navigate(-1)} className="mb-4 flex gap-2 justify-center items-center p-2 border border-r-2 border-b-2 transition-all delay-150 cursor-pointer hover:border">
             <BiLeftArrowAlt className="text-xl"/>
             Go Back
         </button>

@@ -1,5 +1,4 @@
 import HomeImg from "../assets/3d-model.png"
-import Footer from "../components/Footer";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -17,7 +16,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
         <div>
-            <div className="flex flex-col md:flex-row md:gap-5 justify-between items-start pt-30 md:px-30 px-4  h-[90vh]">
+            <div className="flex flex-col md:flex-row md:gap-5 justify-between items-start pt-20 md:px-30 px-4  h-[90vh]">
             <div className='md:w-[40%] flex flex-col justify-center items-start gap-6'>
                 <h1 className='font-bold text-5xl'>Find Your Perfect Stay, Anywhere.</h1>
                 <p>Explore thousands of unique properties around the world — from modern city apartments to peaceful countryside villas. Whether you are planning a weekend getaway, a business trip, or a long-term stay, we help you find the perfect place that feels like home.</p>
@@ -59,8 +58,6 @@ function Home() {
             </div>
             {/* footer wa9ila hh */}
             <Testimonials/>
-            <Footer/>
-
         </div>
         </motion.main>
     )

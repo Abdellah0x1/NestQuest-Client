@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, } from "react-router-dom"
 import Home from "./pages/Home"
-import  NavBar  from "./components/NavBar" 
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Contact from "./pages/Contact"
@@ -13,6 +12,7 @@ import { AuthProvider } from "./auth/authContext"
 import { PropertiesProvider } from "./contexts/PropertyContext"
 
 import { motion } from "framer-motion";
+import Layout from "./Layout"
 
 
 
@@ -25,17 +25,18 @@ function App() {
       transition={{ duration: 0.45, ease: "easeOut" }}
   >
   <BrowserRouter>
-    <NavBar className="mx-auto w-fit"/>
       <AuthProvider>
         <PropertiesProvider>
             <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/signup" element={<Signup/>}/>
-            <Route path="/Contact" element={<Contact/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/browse" element={<BrowseProperties/>}/>
-            <Route path="/browse/:id" element={<PropertyDetails/>}/>
+              <Route element={<Layout/>}>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/Contact" element={<Contact/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/browse" element={<BrowseProperties/>}/>
+                <Route path="/browse/:id" element={<PropertyDetails/>}/>
+              </Route>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/signup" element={<Signup/>}/>
             <Route element={<ProtectedRoute/>}>
             </Route>
         </Routes>

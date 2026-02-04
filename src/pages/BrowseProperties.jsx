@@ -6,10 +6,6 @@ import { IoMdStar } from "react-icons/io";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import Footer from "../components/Footer"
-
-
-
 
 function BrowseProperties() {
     const {properties, loading} = useProperties();
@@ -23,8 +19,8 @@ function BrowseProperties() {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
-        <div className="p-30">
-            <div className="relative flex items-center justify-center">
+        <div className="p-10">
+            <div className="relative flex items-center justfiy-center">
                 <input value={query} onChange={e=> setQuery(e.value)} placeholder="Find your stay" className="w-full py-2 px-8 border border-black mb-5">
                 </input>
                 <CiSearch className="absolute text-xl -translate-y-[50%] left-2"/>
@@ -42,7 +38,6 @@ function BrowseProperties() {
                 </div>)}
             </div>
         </div>
-        <Footer/>
         </motion.main>
     )
 }

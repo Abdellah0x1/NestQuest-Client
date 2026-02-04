@@ -1,6 +1,6 @@
 function About() {
     return (
-        <div className="flex items-center justify-center min-h-screen flex-col gap-10 ">
+        <div className="flex items-center pt-10 min-h-screen flex-col gap-10 ">
             <div className="w-[70%] border border-r-6 border-b-6 rounded-md p-2 hover:border">
                 <h2 className="text-center font-bold text-3xl mb-4">About Us</h2>
                 <p className="text-center">Welcome to <span className="font-bold">NestQuest</span> — your trusted place to discover luxury villas, stylish apartments, and unique stays made for unforgettable trips.

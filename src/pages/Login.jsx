@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {login} from "../api/authApi"
 import { ToastContainer, toast } from 'react-toastify';
+import { BiLeftArrowAlt } from "react-icons/bi";
 
 
 function Login() {
@@ -30,7 +31,11 @@ function Login() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
         <ToastContainer position="top-center" draggable theme="dark"/>
-        <div className="h-screen flex items-center justify-center">
+        <div className="h-screen flex flex-col items-center justify-center">
+            <button onClick={()=> navigate(-1)} className="mb-4 flex gap-2 mb-10 items-center p-2 border border-r-2 border-b-2 transition-all delay-150 cursor-pointer hover:border">
+                        <BiLeftArrowAlt className="text-xl"/>
+                        Go Back
+            </button>
             <form onSubmit={onSubmit} className="border border-r-4 border-b-4 px-6 py-8  w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>
                 <div className="flex flex-col gap-2  mb-2">
