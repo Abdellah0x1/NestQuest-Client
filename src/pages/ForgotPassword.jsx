@@ -8,7 +8,7 @@ function ForgotPassword() {
     async function onSubmit(e){
         try {
             e.preventDefault();
-            await api.post("/forgotPassword", {email})
+            await api.post("/users/forgotPassword", {email})
             toast('Check Your email');
         }catch(error){
             console.log("error sending reset password token", error);
