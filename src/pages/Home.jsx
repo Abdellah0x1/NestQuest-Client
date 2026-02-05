@@ -30,7 +30,7 @@ function Home() {
                 <CiSearch className="absolute text-xl top-[50%]  -translate-y-[50%] left-2 "/>
             </div>
             </div>
-            <img src={HomeImg} className='md:w-[45%]'></img>
+            <img src={HomeImg} className='md:w-[45%] '></img>
             </div>
             {/* features */}
             <div className="bg-gray-50 px-4 md:px-30 pt-10 pb-15">

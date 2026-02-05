@@ -41,7 +41,7 @@ function Signup() {
                                 <BiLeftArrowAlt className="text-xl"/>
                                 Go Back
         </button>
-            <form onSubmit={onSubmit} className="border border-black border-r-4 border-b-4  px-6 py-8 w-90 ">
+            <form onSubmit={onSubmit} className="border border-gray-400 rounded-md  px-6 py-8 w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>
                 <div className="flex flex-col gap-2 mb-2">
                     <label>full name:</label>
@@ -58,6 +58,7 @@ function Signup() {
                 <div className="flex flex-col gap-2 mb-4">
                     <label>Confirm password:</label>
                     <input value={passwordConfirm} onChange={e=>setPasswordConfirm(e.target.value)} required type="password" placeholder="Confirm password" className="border border-gray-200 text-black px-2 py-1"></input>
+                    
                 </div>
                     <button type="sumbit" className="w-full bg-black text-white mt-4 py-2 cursor-pointer hover:bg-gray-800 rounded-sm">Sign up</button>
                     <NavLink className="text-sm text-center text-blue-600 hover:bg-blue-50 p-2 transition-all delay-75 flex justify-center mt-2" to="/login">Login</NavLink>

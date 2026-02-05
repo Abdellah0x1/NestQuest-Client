@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {login} from "../api/authApi"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { BiLeftArrowAlt } from "react-icons/bi";
 
 
@@ -30,21 +30,22 @@ function Login() {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}>
-        <ToastContainer position="top-center" draggable theme="dark"/>
+        
         <div className="h-screen flex flex-col items-center justify-center">
-            <button onClick={()=> navigate(-1)} className="mb-4 flex gap-2 mb-10 items-center p-2 border border-r-2 border-b-2 transition-all delay-150 cursor-pointer hover:border">
+            <NavLink to="/"  className="mb-4 flex gap-2 mb-10 items-center p-2 border  transition-all delay-150 cursor-pointer hover:border">
                         <BiLeftArrowAlt className="text-xl"/>
                         Go Back
-            </button>
-            <form onSubmit={onSubmit} className="border border-r-4 border-b-4 px-6 py-8  w-90 ">
+            </NavLink>
+            <form onSubmit={onSubmit} className="border border-gray-400 rounded-md px-6 py-8  w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>
                 <div className="flex flex-col gap-2  mb-2">
                     <label>email:</label>
                     <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="email@example.com" className="border border-gray-200 text-black px-2 py-1"></input>
                 </div>
-                <div className="flex flex-col gap-2  mb-4">
+                <div className="flex flex-col gap-2">
                     <label>password:</label>
-                    <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}  placeholder="password" className="border border-gray-200 text-black px-2 py-1"></input>
+                    <input autoComplete="current-password" type="password" value={password} onChange={(e)=> setPassword(e.target.value)}  placeholder="password" className="border border-gray-200 text-black px-2 py-1"></input>
+                    <NavLink to="/forgotPassword" className="hover:text-blue-500 transition-all delay-150">Forgot Your Password ?</NavLink>
                 </div>
                     <button type="sumbit" className="w-full bg-black text-white py-2 mt-4 cursor-pointer hover:bg-gray-800 rounded-sm">Login</button>
                     <NavLink className="text-sm text-center text-blue-600 hover:bg-blue-50 p-2 transition-all delay-75 flex justify-center mt-2"  to="/signup">Sign Up</NavLink>

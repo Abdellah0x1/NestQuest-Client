@@ -6,13 +6,13 @@ const authContext = createContext(null);
 
 export function AuthProvider({children}){
     const [user, setUser]= useState(null);
-    const [loading, setLoading] =useState(true);
+    const [loading, setLoading] = useState(true);
 
     async function loadSession(){
         try{
             setLoading(true);
             const res = await getMe();
-            setUser(res.data.user);
+            setUser(res.data.data.user);
             
         }catch(err){
             console.log("can't load current user." ,err)

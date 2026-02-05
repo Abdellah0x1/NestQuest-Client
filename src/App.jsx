@@ -7,12 +7,15 @@ import About from "./pages/About"
 import ProtectedRoute from "./auth/ProtectedRoute"
 import BrowseProperties from "./pages/BrowseProperties"
 import PropertyDetails from "./pages/PropertyDetails"
+import ForgotPassword from "./pages/ForgotPassword"
 
 import { AuthProvider } from "./auth/authContext"
 import { PropertiesProvider } from "./contexts/PropertyContext"
 
 import { motion } from "framer-motion";
 import Layout from "./Layout"
+import NotFound from "./pages/NotFound"
+import Account from "./pages/Account"
 
 
 
@@ -37,7 +40,10 @@ function App() {
               </Route>
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
-            <Route element={<ProtectedRoute/>}>
+              <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+              <Route path="/*" element={<NotFound/>}/>
+                <Route element={<ProtectedRoute/>}>
+              <Route path="/Account" element={<Account/>} />
             </Route>
         </Routes>
         </PropertiesProvider>

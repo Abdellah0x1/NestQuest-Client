@@ -50,7 +50,7 @@ function Footer() {
                         <h2 className="font-bold mb-5">Newsletter</h2>
                         <form className="flex items-center w-full max-w-md">
                             <input className="h-14 p-4 pr-14 outline-none border border-gray-500 rounded-full border-r-0 md:w-70 bg-transparent" placeholder="Email" type="email" required></input>
-                            <button type="submit" className="bg-black text-white h-14 p-4 rounded-full  -ml-14">Subscribe</button>
+                            <button type="submit" className="bg-black text-white  p-4 rounded-full  -ml-14">Subscribe</button>
                         </form>
                     </div>
 
