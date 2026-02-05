@@ -24,7 +24,7 @@ function Contact() {
         <ToastContainer position="top-center" draggable theme="dark"/>
         <div className="w-full h-screen  flex flex-col items-center pt-10">
 
-            <div className="w-[50%] border border-gray-400 rounded-md p-4">
+            <div className="w-[90%] md:w-[50%] border border-gray-400 rounded-md p-4">
                 <h2 className="font-bold mb-5 text-center">Please fill out the form below</h2>
                 <form className="flex flex-col gap-4">
                     <div className="flex flex-col gap-1">

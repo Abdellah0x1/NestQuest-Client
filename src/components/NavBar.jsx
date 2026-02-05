@@ -55,6 +55,7 @@ function Navbar(){
       <li><NavLink onClick={()=> setIsOpen(!isOpen)} to="/browse" className="p-2  transition-all delay-75">Properties</NavLink></li>
       <li><NavLink onClick={()=> setIsOpen(!isOpen)} to="/contact"  className="p-2  transition-all delay-75">Contact</NavLink></li>
       <li><NavLink nClick={()=> setIsOpen(!isOpen)} to="/About"  className="p-2  transition-all delay-75">About</NavLink></li>
+      {user && <li><NavLink onClick={()=> setIsOpen(!isOpen)} to="/account"  className="p-2  transition-all delay-75">My Account</NavLink></li>}
     </ul>
     {
       user ? 
