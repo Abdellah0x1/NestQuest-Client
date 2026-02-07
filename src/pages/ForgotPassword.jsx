@@ -19,10 +19,10 @@ function ForgotPassword() {
     return (
         <div className="flex justify-center items-center h-screen">
             <ToastContainer theme="dark" draggable position="top-center"/>
-            <form onSubmit={onSubmit} className="flex flex-col gap-2 w-[60%]  md:w-[20%]">
+            <form onSubmit={onSubmit} className="flex flex-col gap-2 w-[60%]  md:w-[20%] p-4 border border-gray-300 rounded-md">
                 <input required type="email" className=" bg-gray-50 py-2 px-4  mb-4 rounded-md outline-none border border-gray-300 focus:border-black" placeholder="Your email" value={email} onChange={e=> setEmail(e.target.value)}></input>
                 <button className="bg-black text-white py-2 px-4 rounded-md cursor-pointer transition-all delay-150 hover:bg-gray-700" type="submit">Submit</button>
-                <NavLink to="/login" className="w-full text-center py-2 px-4 border border-gray-100 rounded-md bg-gray-50 transition-all delay-150 hover:bg-gray-100">Cancel</NavLink>
+                <NavLink to="/login" className="w-full text-center py-2 px-4 border border-gray-100 rounded-md bg-gray-200 transition-all delay-150 hover:bg-gray-300">Cancel</NavLink>
             </form>
         </div>
     )

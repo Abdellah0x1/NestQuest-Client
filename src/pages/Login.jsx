@@ -36,7 +36,7 @@ function Login() {
                         <BiLeftArrowAlt className="text-xl"/>
                         Go Back
             </NavLink>
-            <form onSubmit={onSubmit} className="border border-gray-400 rounded-md px-6 py-8  w-90 ">
+            <form onSubmit={onSubmit} className="border border-gray-300 rounded-md px-6 py-8  w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>
                 <div className="flex flex-col gap-2  mb-2">
                     <label>email:</label>

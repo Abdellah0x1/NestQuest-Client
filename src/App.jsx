@@ -12,10 +12,12 @@ import ForgotPassword from "./pages/ForgotPassword"
 import { AuthProvider } from "./auth/authContext"
 import { PropertiesProvider } from "./contexts/PropertyContext"
 
+import { ToastContainer } from "react-toastify"
 import { motion } from "framer-motion";
 import Layout from "./Layout"
 import NotFound from "./pages/NotFound"
 import Account from "./pages/Account"
+import ResetPassword from "./pages/ResetPassword"
 
 
 
@@ -27,6 +29,8 @@ function App() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
   >
+  <ToastContainer position="top-center" draggable theme="dark"/>
+
   <BrowserRouter>
       <AuthProvider>
         <PropertiesProvider>
@@ -41,10 +45,11 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+              <Route path="/resetPassword/:token" element={<ResetPassword/>}/>
               <Route path="/*" element={<NotFound/>}/>
-                <Route element={<ProtectedRoute/>}>
-              <Route path="/Account" element={<Account/>} />
-            </Route>
+              <Route element={<ProtectedRoute/>}>
+                <Route path="/Account" element={<Account/>} />
+              </Route>
         </Routes>
         </PropertiesProvider>
       </AuthProvider>
