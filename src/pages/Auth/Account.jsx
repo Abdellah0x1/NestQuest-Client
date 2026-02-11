@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useAuth } from "../auth/authContext"
+import { useAuth } from "../../auth/authContext"
 import { NavLink, useNavigate } from "react-router-dom"
 import {toast } from "react-toastify"
-import api from "../api/axios"
+import api from "../../api/axios"
 
 
 

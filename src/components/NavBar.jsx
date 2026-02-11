@@ -8,9 +8,13 @@ import { IoClose, IoMenu } from "react-icons/io5";
 
 
 function Navbar(){
-  const {user} = useAuth()
+  const {user,setUser} = useAuth()
   const [isOpen, setIsOpen] = useState(false);
   
+  function LogOut(){
+    logout();
+    setUser(null);
+  }
 
   return <nav className="sticky z-50 top-0 px-6 md:px-20 py-4 bg-white flex items-center justify-between border border-b-gray-300">
     <NavLink to="/"><img src={Logo} className="w-20"/></NavLink>
@@ -35,7 +39,7 @@ function Navbar(){
           </NavLink>
           <button 
             className="rounded-full bg-black px-4 py-2 text-white text-sm font-medium hover:bg-black/90 transition"
-            onClick={logout}
+            onClick={LogOut}
           >
             Logout
           </button>

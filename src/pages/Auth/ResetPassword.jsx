@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useParams } from "react-router-dom"
 
-import api from "../api/axios"
+import api from "../../api/axios"
 import { toast } from "react-toastify"
 
 function ResetPassword() {
@@ -11,7 +11,7 @@ function ResetPassword() {
     async function onSubmit(e){
         e.preventDefault();
         try{
-            const res = await api.post(`/users/resetPassword/${token}`,{password,passwordConfirm});
+            await api.post(`/users/resetPassword/${token}`,{password,passwordConfirm});
             toast("Password updated ✅")
         }catch(err){
             console.log("error updating password",err)

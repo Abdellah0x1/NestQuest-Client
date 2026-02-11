@@ -1,15 +1,29 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {login} from "../api/authApi"
+import {login} from "../../api/authApi"
 import { toast } from 'react-toastify';
 import { BiLeftArrowAlt } from "react-icons/bi";
+import { useAuth } from "../../auth/authContext";
+
+import Google from "../../assets/google.png"
 
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const {googleLogin } = useAuth();
+
+    async function handleGoogleLogin(credentialResponse){
+        try{
+            await googleLogin(credentialResponse.credential);
+            navigate('/')
+        }catch(error){
+            toast.error('error log in with google')
+            console.log(error)
+        }
+    }
 
     async function onSubmit(e){
         e.preventDefault();
@@ -18,6 +32,7 @@ function Login() {
             setEmail("");
             setPassword("");
             toast("Log in successful");
+            
             navigate('/')
         }catch(err){
             console.log(err)
@@ -36,9 +51,10 @@ function Login() {
                         <BiLeftArrowAlt className="text-xl"/>
                         Go Back
             </NavLink>
-            <form onSubmit={onSubmit} className="border border-gray-300 rounded-md px-6 py-8  w-90 ">
+            <div  className="border border-gray-300 rounded-md px-6 py-8  w-90 ">
                 <h2 className="text-center font-semibold mb-4">Login to your account</h2>
-                <div className="flex flex-col gap-2  mb-2">
+                <form onSubmit={onSubmit}>
+                    <div className="flex flex-col gap-2  mb-2">
                     <label>email:</label>
                     <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="email@example.com" className="border border-gray-200 text-black px-2 py-1"></input>
                 </div>
@@ -48,8 +64,15 @@ function Login() {
                     <NavLink to="/forgotPassword" className="hover:text-blue-500 transition-all delay-150">Forgot Your Password ?</NavLink>
                 </div>
                     <button type="sumbit" className="w-full bg-black text-white py-2 mt-4 cursor-pointer hover:bg-gray-800 rounded-sm">Login</button>
-                    <NavLink className="text-sm text-center text-blue-600 hover:bg-blue-50 p-2 transition-all delay-75 flex justify-center mt-2"  to="/signup">Sign Up</NavLink>
-            </form>
+                </form>
+                <div className="border-b border-gray-300 my-5"></div>
+                <button className="w-full flex gap-2 justify-center font-bold border border-gray-400 text-gray-600 py-2 mt-4 cursor-pointer hover:bg-gray-100 rounded-sm">
+                    <img src={Google} className="w-6"/>
+                    Google
+                </button>
+
+                <NavLink className="text-sm text-center text-blue-600 hover:bg-blue-50 p-2 transition-all delay-75 flex justify-center mt-2"  to="/signup">Sign Up</NavLink>
+            </div>
         </div>
     </motion.main>
     )

@@ -26,6 +26,8 @@ export function AuthProvider({children}){
         setUser(null);
     }
 
+    
+
     useEffect(()=>{loadSession()},[])
 
     const value= useMemo(()=>({user, setUser, loading, reload: loadSession,logout}),[user,loading]);

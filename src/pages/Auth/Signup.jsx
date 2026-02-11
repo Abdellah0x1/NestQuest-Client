@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { signup } from "../api/authApi";
+import { signup } from "../../api/authApi";
 import { ToastContainer,toast } from "react-toastify";
 import { BiLeftArrowAlt } from "react-icons/bi";
 

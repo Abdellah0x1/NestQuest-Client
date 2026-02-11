@@ -56,7 +56,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-            {/* footer wa9ila hh */}
+    
             <Testimonials/>
         </div>
         </motion.main>
